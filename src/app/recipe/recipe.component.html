@@ -1,0 +1,32 @@
+<body><div class="recipe-book">
+   <div class="recipe-header">
+  <h2 style="font-size: 30px; font-weight: bolder; margin-left: 0%;">Maharashtra Munchies: A Culinary Journey</h2>
+  <p style="font-style: italic; color: rgb(226, 101, 43);">Spice up Your Kitchen with Maharashtrian Magic</p>
+ </div>
+ <div class="recipe-card"  *ngFor="let recipe of recipes">
+  <div class="header" style="display: flex;">
+ <div  class="recipe-image" style="margin-left: 30%;" [style.background-image]="'url(' + recipe.imageUrl + ')'"></div>
+ <div style="align-content: center;">
+ <h1 style="font-size: 50px; color:rgb(199, 19, 115); margin-top: 20%; margin-left: 20px;">{{ recipe.name }}</h1>
+ </div>
+ </div><br><br>
+ <div style="margin-left: 20px;">
+ <h4 style="text-decoration-line: underline; font-style: oblique; font-weight: bolder; font-size: 20px; 
+color:rgb(43, 122, 226);">About:</h4>
+ <p class="description">{{ recipe.description }}</p><br>
+ <h4 style="text-decoration-line: underline; font-style: oblique; font-weight: bolder; font-size: 20px; 
+color:rgb(43, 122, 226);">Ingredients:</h4>
+ <p class="ingredients">{{ recipe.ingredients.join(', ') }}</p><br>
+ <h4 style="text-decoration-line: underline; font-style: oblique; font-weight: bolder; font-size: 20px; 
+color:rgb(43, 122, 226);">Procedure:</h4>
+ <ol class="instructions">
+ <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
+ </ol>
+ </div>
+ <div>
+ <button style="margin-left: 45%; height: 50px; background-color: yellowgreen; margin-bottom: 
+20px;" (click)="addToCart(recipe)">Add to Cart</button>
+ </div>
+ </div>
+</div>
+</body>

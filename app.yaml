@@ -1,0 +1,10 @@
+runtime: nodejs18
+instance_class: F2
+env_variables:
+  BUCKET_NAME: "recipes_books" 
+handlers: 
+  - url: /
+    static_files: dist/recipecart/index.html
+    upload: dist/recipecart/index.html 
+  - url: /
+    static_dir: dist/recipecart

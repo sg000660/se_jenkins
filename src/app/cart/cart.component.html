@@ -1,0 +1,37 @@
+<div class="cart-container">
+  <div class="cart-header">
+    <h2 style="color: rebeccapurple;">Your Cart</h2>
+    <p style="color: rebeccapurple;">Total Cost: INR {{ getTotalCost() | number:'1.2-2' }}</p>
+    <button style="background-color: aqua; height: 50px;" color="primary" (click)="checkout()">Checkout</button><br><br>
+  </div>
+  <mat-card class="cart-item" *ngFor="let item of cartItems; let i = index">
+    <mat-card-header>
+      <div mat-card-avatar class="cart-image"></div>
+      <mat-card-title style="font-size: 50px; color: purple;">{{ item.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="quantity-container">
+        <button mat-icon-button (click)="decreaseQuantity(i)">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <span class="quantity">{{ item.quantity }}</span>
+        <button mat-icon-button (click)="increaseQuantity(i)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <p>Total Price: {{ item.price }}</p>
+      <p>Ingredients:</p>
+      <ul>
+        <li *ngFor="let ingredient of item.ingredients">{{ ingredient }} 
+          <button type="button" (click)="remove(i)" class="remove">Remove</button><br><bR>
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button style="background-color: rgb(240, 159, 231);" (click)="removeItem(i)">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <p style="color: red;">*Your cart is empty.*</p>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.cart-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+.cart-header {
+  text-align: center;
+}
+.cart-summary {
+  text-align: right;
+  margin-top: 10px;
+}
+.cart-item {
+  margin-bottom: 20px;
+}
+.cart-image {
+  background-image: url('https://imgs.search.brave.com/nia3OrWX9lTbvU8aZyPCtjrgbOdB8rqTuHeJ-t_fJp4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAxLzkzLzEyLzMx/LzM2MF9GXzE5MzEy/MzE0N19KWTEyc1l5/VFhZanVpRnJVWXla/bkxaQUk4Y1E1MTJq/Qi5qcGc');
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+}
+.empty-cart {
+  text-align: center;
+  font-size: 1.2em;
+}
+.quantity-container {
+  display: flex;
+  align-items: center;
+}
+.quantity {
+  font-size: 1.2em;
+  margin: 0 10px;
+}
